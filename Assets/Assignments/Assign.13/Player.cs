@@ -15,22 +15,28 @@ public class Player
     }
     public void Heal(int amount)
     {
-        haelth = haelth + amount;
-        if (haelth > 100)
+        if (haelth + amount > 100)
         {
-            haelth = 100;
+
+            Debug.Log("you acceded the limit so we reject this amount and the health now is : " + haelth);
+
         }
-        Debug.Log(haelth);
+        else
+        {
+            haelth += amount;
+            Debug.Log("the health is : " + haelth);
+        }
     }
     public void Heal(bool fullRestore)
     {
         if (fullRestore)
         {
+            Debug.Log("the health now is full !!");
             haelth = 100;
         }
     }
     public static void ShowPlayerCount()
     {
-        Debug.Log(playerCount);
+        Debug.Log("the number of opjects you have created is"+playerCount);
     }
 }
