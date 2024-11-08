@@ -22,9 +22,14 @@ public class Character
         get { return health; }
         set
         {
-            health += value;
-            if (health + value > 100)
+            int result=health+value;
+            if (result > 100)
                 health = 100;
+            else if (result<0)
+            health=0;
+            else
+            health=result;
+
         }
 
     }
