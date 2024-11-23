@@ -18,21 +18,33 @@ namespace Assignment16
             set
             {
                 Debug.Log("the old health for "+name+" is " + health);
-                int newHealth = health + value;
-                if (newHealth > 100)
-                {
-                    newHealth =100;
-                }
-                else if (newHealth < 0)
-                {
-                    newHealth =0;
-                }
-                health=newHealth;
-
-                    Debug.Log("the new health for "+name+" is " + health );
-                
+                if (value > 100)
+                    health = 100;
+                else if (value < 0)
+                    health = 0;
+                else
+                    health = value;
+                Debug.Log("the new health for "+name+" is " + health );
             }
         }
+        //     set
+        //     {
+        //         Debug.Log("the old health for "+name+" is " + health);
+        //         int newHealth = health + value;
+        //         if (newHealth > 100)
+        //         {
+        //             newHealth =100;
+        //         }
+        //         else if (newHealth < 0)
+        //         {
+        //             newHealth =0;
+        //         }
+        //         health=newHealth;
+
+        //             Debug.Log("the new health for "+name+" is " + health );
+
+        //     }
+        // }
         public Character(string name, int health, Position position)
         {
             this.name = name;
@@ -51,12 +63,12 @@ namespace Assignment16
         }
         public void Attack(int damage, Character target)
         {
-            target.Health =-damage;
+            target.Health -= damage;
 
         }
         public void Attack(int damage, Character target, string attackType)
         {
-            target.Health =-damage;
+            target.Health = -damage;
             Debug.Log("the attack type is : " + attackType);
 
         }
