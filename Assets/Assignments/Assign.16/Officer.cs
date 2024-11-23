@@ -5,7 +5,7 @@ namespace Assignment16
 {
     public class Officer : Character
     {
-        public Officer(string name, int health, Position position) : base("officer", 80, new Position(40, 40, 40))
+        public Officer(string name, int health, Position position) : base(name,health,position)
         {
 
         }

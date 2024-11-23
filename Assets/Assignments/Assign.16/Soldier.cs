@@ -5,7 +5,7 @@ namespace Assignment16
 {
     public class Soldier : Character
     {
-        public Soldier(string name, int health, Position position) : base("soldier", 100, new Position(10, 20, 30))
+        public Soldier(string name, int health, Position position) : base(name,health,position)
         {
 
         }

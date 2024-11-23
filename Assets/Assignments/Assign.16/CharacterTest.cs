@@ -14,7 +14,7 @@ namespace Assignment16
             {
                 arr[i].DisplayInfo();
             }
-            officer.Attack(30,officer);
+            officer.Attack(30,soldier);
 
 
         }

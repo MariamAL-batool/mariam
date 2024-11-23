@@ -17,21 +17,20 @@ namespace Assignment16
             }
             set
             {
-                int result = health + value;
                 Debug.Log("the old health for "+name+" is " + health);
-                if (result > 100)
+                int newHealth = health + value;
+                if (newHealth > 100)
                 {
-                    Debug.Log("you acceded the limit by adding so we reject this amount and the health now is : " + health);
+                    newHealth =100;
                 }
-                else if (result < 0)
+                else if (newHealth < 0)
                 {
-                    Debug.Log("you acceded the limit so we reject this amount and the health now is : " + health);
+                    newHealth =0;
                 }
-                else
-                {
-                    health = result;
-                    Debug.Log("the new health for "+name+" is " + health);
-                }
+                health=newHealth;
+
+                    Debug.Log("the new health for "+name+" is " + health );
+                
             }
         }
         public Character(string name, int health, Position position)
@@ -52,12 +51,12 @@ namespace Assignment16
         }
         public void Attack(int damage, Character target)
         {
-            target.Health = -damage;
+            target.Health =-damage;
 
         }
         public void Attack(int damage, Character target, string attackType)
         {
-            target.Health = -damage;
+            target.Health =-damage;
             Debug.Log("the attack type is : " + attackType);
 
         }
